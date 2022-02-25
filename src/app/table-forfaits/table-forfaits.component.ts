@@ -25,9 +25,9 @@ export class TableForfaitsComponent implements OnInit {
       .subscribe(resultat => this.tableauForfaits = resultat);
   }
 
-  onDelete(forfait: Forfaits): void {
-    this.forfaitService.deleteForfait(forfait.id)
-      .subscribe(_ => this.tableauForfaits = this.tableauForfaits.filter(p => p !== forfait));
+  onDelete(tableauForfaits: Forfaits) {
+    this.forfaitService.deleteForfait(tableauForfaits.id)
+      .subscribe(_ => this.tableauForfaits = this.tableauForfaits.filter(p => p !== tableauForfaits));
   }
 
   onSelect(tableauForfaits?: Forfaits) {
