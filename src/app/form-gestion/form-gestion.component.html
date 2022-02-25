@@ -13,7 +13,6 @@
         <mat-error *ngIf="villeDepart.invalid && (villeDepart.dirty || villeDepart.touched) && villeDepart.hasError('required')">La ville de départ est obligatoire.</mat-error>
         <mat-error *ngIf="villeDepart.invalid && (villeDepart.dirty || villeDepart.touched) && villeDepart.hasError('minlength')">La ville de départ doit contenir au moins 2 caractères.</mat-error>
         <mat-error *ngIf="villeDepart.invalid && (villeDepart.dirty || villeDepart.touched) && villeDepart.hasError('maxlength')">La ville de départ doit contenir au maximum 50 caractères.</mat-error>
-        <span matSuffix>$&nbsp;</span>
     </mat-form-field>
 
     <button matSuffix type="submit"  mat-raised-button (click)="onCancel()">Annuler</button>&nbsp;

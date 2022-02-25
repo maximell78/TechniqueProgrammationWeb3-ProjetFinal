@@ -24,7 +24,7 @@ export class ForfaitService {
   }
 
   editForfait(forfait: Forfaits): Observable<Forfaits> {
-    return this.http.put<Forfaits>(this.forfaitsUrl + "?id=" + "forfait.id", forfait, httpOptions);
+    return this.http.put<Forfaits>(this.forfaitsUrl + "?id=" + forfait.id, forfait, httpOptions);
   }
 
   deleteForfait(id: string): Observable<Forfaits> {
