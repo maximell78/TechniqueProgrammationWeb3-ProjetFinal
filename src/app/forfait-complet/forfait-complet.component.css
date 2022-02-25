@@ -1,0 +1,16 @@
+.text-droit {
+    text-align: right;
+}
+
+.margNegTop {
+    margin-top: -2em;
+}
+
+.blue {
+    color: blue;
+}
+
+.caracteristique {
+    font-size: small;
+    color: gray;
+}

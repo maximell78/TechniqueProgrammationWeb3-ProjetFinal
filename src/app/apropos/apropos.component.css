@@ -1,0 +1,8 @@
+.title {
+    font-weight: bold;
+}
+
+.text-justify {
+    text-align: justify;
+    text-justify: auto;
+}

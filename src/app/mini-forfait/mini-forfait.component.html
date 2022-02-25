@@ -1,0 +1,42 @@
+<div class="container-fluid p-3">
+    <div class="row">
+        <ng-container *ngFor="let forfait of tableauForfaits">
+            <div class="col-4 card m-3" *ngIf="forfait.vedette">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-6">
+                            <p class="mt-2">
+                                {{forfait.destination}}
+                            </p>                            
+                            <span>
+                                {{forfait.hotel.nom}}
+                            </span>
+                        </div>
+                        <div class="col-6">
+                            <p>
+                                {{forfait.villeDepart}}
+                            </p>
+                            <p [ngClass]="{'rayer': forfait.affichageRabais === true}">
+                                {{forfait.prix | currency:'CAD':'symbol':'1.0-0'}}
+                            </p>
+                            <p>
+                                {{forfait.rabais | currency:'CAD':'symbol':'1.0-0'}}
+                                {{forfait.nouveauPrix | currency:'CAD':'symbol':'1.0-0'}}
+                            </p>
+                            <p>
+                                {{forfait.dateDepart}}
+                                {{forfait.duree}}
+                            </p>                           
+                        </div>
+                        <app-etoiles [rating]="forfait.hotel.nombreEtoiles"></app-etoiles>
+                        <div>
+                            <p class="text-droit">
+                                Forfait vedette
+                            </p>
+                        </div>
+                    </div>                
+                </div>            
+            </div>
+        </ng-container>        
+    </div>
+</div>

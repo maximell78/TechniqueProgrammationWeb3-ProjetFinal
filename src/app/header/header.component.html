@@ -1,0 +1,22 @@
+<ul class="navbar navbar-dark bg-dark ml-auto container-fluid">
+    <li class="nav-item">
+        <a routerLink="" class="btn btn-primary">Accueil</a>            
+    </li>
+    <li class="nav-item">
+        <button mat-button [matMenuTriggerFor]="forfait" class="btn btn-primary">Forfait</button>
+        <mat-menu #forfait="matMenu" yPosition="above">
+            <a routerLink="/caraibe" mat-menu-item>Forfait Caraibe</a>
+            <a routerLink="/europe" mat-menu-item>Forfait Europe</a>
+        </mat-menu>
+    </li>
+    <li class="nav-item">
+        <a routerLink="/apropos" class="btn btn-primary">À Propos</a>  
+    </li>
+    <li class="nav-item">
+        <button mat-button [matMenuTriggerFor]="admin" class="btn btn-primary">Administration</button>
+        <mat-menu #admin="matMenu" yPosition="above">
+            <a routerLink="/administration" mat-menu-item>Gérer les forfaits</a>
+            <a routerLink="/stats" mat-menu-item>statistiques</a>
+        </mat-menu>
+    </li>
+</ul>    

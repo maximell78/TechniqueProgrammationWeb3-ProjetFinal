@@ -1,0 +1,21 @@
+<form #forfaitForm="ngForm">
+    <mat-form-field appearance="fill" class="half-width">
+        <mat-label>Destination</mat-label>
+        <input name="destination" [(ngModel)]="forfait.destination" #destination="ngModel" matInput required minlength="2" maxlength="50"  placeholder="Ex. Varadero, Cuba">
+        <mat-error *ngIf="destination.invalid && (destination.dirty || destination.touched) && destination.hasError('required')">La destination est obligatoire.</mat-error>
+        <mat-error *ngIf="destination.invalid && (destination.dirty || destination.touched) && destination.hasError('minlength')">La destination doit contenir au moins 2 caractères.</mat-error>
+        <mat-error *ngIf="destination.invalid && (destination.dirty || destination.touched) && destination.hasError('maxlength')">La destination doit contenir au maximum 50 caractères.</mat-error>
+
+    </mat-form-field>
+    <mat-form-field required appearance="fill" class="half-width">
+        <mat-label>Départ</mat-label>
+        <input name="depart" [(ngModel)]="forfait.villeDepart" #villeDepart="ngModel" required type="text" matInput placeholder="Ex. Montréal, Quebec">
+        <mat-error *ngIf="villeDepart.invalid && (villeDepart.dirty || villeDepart.touched) && villeDepart.hasError('required')">La ville de départ est obligatoire.</mat-error>
+        <mat-error *ngIf="villeDepart.invalid && (villeDepart.dirty || villeDepart.touched) && villeDepart.hasError('minlength')">La ville de départ doit contenir au moins 2 caractères.</mat-error>
+        <mat-error *ngIf="villeDepart.invalid && (villeDepart.dirty || villeDepart.touched) && villeDepart.hasError('maxlength')">La ville de départ doit contenir au maximum 50 caractères.</mat-error>
+        <span matSuffix>$&nbsp;</span>
+    </mat-form-field>
+
+    <button matSuffix type="submit"  mat-raised-button (click)="onCancel()">Annuler</button>&nbsp;
+    <button matSuffix type="submit"  mat-raised-button [disabled]="!forfaitForm.form.valid" (click)="onSave(forfaitForm)">ok</button>
+</form>
